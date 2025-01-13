@@ -1,0 +1,78 @@
+.header {
+  border-top: 4px solid $accentColor;
+
+  /* Static Header Styles */
+  & .static-inner-header {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 30% 1fr 20%;
+    grid-template-areas:
+  "alias-static-ih--head alias-static-ih--menus alias-static-ih--buttons"
+  "alias-static-ih--communication-block alias-static-ih--communication-block alias-static-ih--communication-block";
+    background-color: $mainBgColor;
+    padding: 0 1rem;
+
+    & .general-menu {
+      display: inline-flex;
+
+      & li {
+        display: inline-block;
+      }
+    }
+
+    & .static-inner-header--hide-on-mobile {
+      @include mq-inv-medium {
+        display: none;
+      }
+    }
+  }
+
+  /* - Logo Block Part */
+  & .static-inner-header--head {
+    grid-area: alias-static-ih--head;
+    display: flex;
+    align-items: center;
+  }
+
+  /* - Main Menu Block Part */
+  & .static-inner-header--menus {
+    grid-area: alias-static-ih--menus;
+
+    & .main-menu-wrapper,
+    & .language-switch-menu-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    & .menu-item {
+      &.active .menu-link {
+        color: $accentColor;
+      }
+    }
+
+    & .menu-link {
+      padding: 0 0.5rem;
+      font-size: 1.125rem;
+      line-height: 5.0625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      &:hover {
+        color: $accentColor;
+      }
+    }
+
+    & .lang-link {
+      padding: 0 0.3125rem;
+    }
+  }
+
+  /* - Main Menu Buttons Block Part */
+  & .static-inner-header--buttons {
+    grid-area: alias-static-ih--buttons;
+  }
+
+  & .static-inner-header--communication-block {
+    grid-area: alias-static-ih--communication-block;
+  }
+
+}
