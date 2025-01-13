@@ -1,0 +1,65 @@
+@use 'inc' as *;
+
+body {
+  display: grid;
+  grid-template-rows: 12.375rem 1fr 3.75rem;
+  grid-template-areas:
+"alias-header"
+"alias-main"
+"alias-footer";
+  color: $text;
+  font-size: 16px;
+  font-family: $mainFont;
+  font-weight: normal;
+  font-style: normal;
+  height: 100vh;
+  @include mq-inv-tablet {
+    grid-template-rows: 12.375rem 1fr 5.125rem;
+  }
+  @include mq-inv-medium {
+    grid-template-rows: 5.125rem 1fr 5.125rem;
+  }
+
+  &.ovf_hidden {
+    overflow: hidden;
+  }
+}
+
+section {
+  display: block;
+}
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  @include mq-inv-large {
+    padding: 0 20px;
+  }
+  @include mq-inv-medium {
+    padding: 0 15px;
+  }
+}
+
+main {
+  grid-area: alias-main;
+  position: relative;
+}
+
+//header & common
+@import 'parts/header';
+@import 'parts/section-title';
+@import 'parts/layout';
+//pages
+//@import 'pages/front_page';
+@import 'pages/page';
+
+@import 'parts/seach_form';
+//footer
+@import 'parts/footer';
+

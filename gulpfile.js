@@ -17,7 +17,7 @@ gulp.task('browser-sync', function () {
 function bsReload(done) { browserSync.reload(); done(); };
 
 gulp.task('styles', function () {
-	return gulp.src('app/sass/**/*.scss')
+	return gulp.src('app/scss/**/*.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass({ outputStyle: 'expanded' }))
 		.pipe(autoprefixer({
@@ -45,7 +45,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('watch', function () {
-	gulp.watch('app/sass/**/*.scss', gulp.parallel('styles'));
+	gulp.watch('app/scss/**/*.scss', gulp.parallel('styles'));
 	gulp.watch('app/js/**/*.js', gulp.parallel('scripts'));
 	gulp.watch('app/html-dev/**/*.html', gulp.parallel('html'));
 });
