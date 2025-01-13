@@ -1,25 +1,14 @@
 @use 'inc' as *;
 
 body {
-  display: grid;
-  grid-template-rows: 12.375rem 1fr 3.75rem;
-  grid-template-areas:
-"alias-header"
-"alias-main"
-"alias-footer";
   color: $text;
+  background: url("../../img/barber_pattern.png") repeat repeat;
   font-size: 16px;
+  line-height: 1.25;
   font-family: $mainFont;
   font-weight: normal;
   font-style: normal;
   height: 100vh;
-  @include mq-inv-tablet {
-    grid-template-rows: 12.375rem 1fr 5.125rem;
-  }
-  @include mq-inv-medium {
-    grid-template-rows: 5.125rem 1fr 5.125rem;
-  }
-
   &.ovf_hidden {
     overflow: hidden;
   }
