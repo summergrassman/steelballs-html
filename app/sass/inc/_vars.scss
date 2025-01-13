@@ -1,0 +1,22 @@
+// colors
+$text: #6A5555;
+$text: #0b0b0b;
+$textBlue: #496D85;
+$blue: #41A3E5;
+$green: #A6C20F;
+$darkgreen: #00A9B9;
+// fonts
+$mainFont: 'Montserrat', sans-serif;
+$secondaryFont: 'Inter', sans-serif;
+//
+
+@mixin itemGrid($n, $gap) {
+  width: calc(100% / #{$n} - #{$gap}px + #{$gap}px / #{$n});
+  margin-right: #{$gap}px;
+  &:nth-child(#{$n + 1}n){
+    margin-right: #{$gap}px;
+  }
+  &:nth-child(#{$n}n){
+    margin-right: 0;
+  }
+}
