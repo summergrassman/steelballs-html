@@ -12,9 +12,10 @@ jQuery(function() {
 
     mobileToggleMenu.on('click', openMobileMenu);
 
+    // Adding top Fixed header
     $(window).scroll(function() {
         let $this = $(this),
-            $menu_top = $(".fixed-main-menu-wrap");
+            $menu_top = $(".static-inner-header");
         $main_body = $("body");
         if ($this.scrollTop() > 150) {
             $menu_top.addClass("fixed-top-menu");
