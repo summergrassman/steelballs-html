@@ -14,6 +14,46 @@
     height: 12.5rem;
     min-height: 3.75rem;
     max-height: 12.5rem;
+    &.fixed-top-menu {
+      width: 100%;
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      height: auto;
+      grid-template-rows: 3.75rem;
+      grid-template-columns: 21.25rem 1fr 13rem;
+      padding: 0.48rem 0;
+      grid-template-areas:
+    "alias-static-ih--head alias-static-ih--menus alias-static-ih--buttons";
+      border-top: 4px solid $accentColor;
+      @include mq-inv-tablet {
+        grid-template-columns: 12rem 1fr 10rem;
+        & .menu-link,
+        & .lang-link {
+          font-size: 0.875rem;
+        }
+      }
+      @include mq-inv-medium {
+        padding: 0;
+      }
+      & .static-inner-header--menus {
+        &.static-inner-header--hide-on-mobile {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include mq-inv-medium {
+            display: none;
+          }
+          & .lang-menu {
+            border-color: transparent;
+            align-self: end;
+          }
+        }
+      }
+      & .static-inner-header--communication-block {
+        display: none;
+      }
+    }
     @include mq-inv-tablet {
       grid-template-columns: 12rem 1fr 10rem;
     }
