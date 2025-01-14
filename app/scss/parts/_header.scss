@@ -1,5 +1,6 @@
 .header {
   border-top: 4px solid $accentColor;
+  position: relative;
 
   /* Static Header Styles */
   & .static-inner-header {
@@ -16,7 +17,11 @@
     @include mq-inv-tablet {
       grid-template-columns: 12rem 1fr 10rem;
     }
-
+    @include mq-inv-medium {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
 
     & .general-menu {
       display: inline-flex;
@@ -38,6 +43,27 @@
     grid-area: alias-static-ih--head;
     display: flex;
     align-items: center;
+    @include mq-inv-medium {
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid $accentColor;
+    }
+    & .nav-button-toggle {
+      display: none;
+      margin-right: 1rem;
+      padding: 0.5625rem 0.625rem;
+      border: 1px solid $accentColor;
+      font-size: 1.125rem;
+      border-radius: 4px;
+      color: $accentColor;
+      transition: color 0.5s ease, background-color 0.5s ease;
+      &:hover {
+
+      }
+      @include mq-inv-medium {
+        display: inline-block;
+      }
+    }
   }
 
   & .logo {
@@ -126,20 +152,15 @@
   }
 
   /* - Main Menu Buttons Block Part */
-  & .static-inner-header--buttons {
-    grid-area: alias-static-ih--buttons;
-    padding-right: 2.5625rem;
+  & .inner-header--buttons {
     display: flex;
     justify-content: end;
     align-items: center;
-    @include mq-inv-tablet {
-      padding-right: 1rem;
-    }
-
     & .header-button {
       display: inline-block;
       padding: 0 0.625rem;
       text-transform: uppercase;
+      text-align: center;
       line-height: 2.5625rem;
       height: 2.5rem;
       font-size: 0.9375rem;
@@ -150,30 +171,48 @@
       border: 1px solid $accentColor;
       border-radius: 0;
       transition: background-color 0.5s ease;
-      @include mq-inv-tablet {
-        padding: 0 0.3125rem;
-      }
-
       &:hover {
         color: $textColor;
         background-color: $accentColor;
       }
-
       &.header-button--emphasis {
         color: $textColor;
         background-color: $accentColor;
         border: 1px solid $accentColor;
       }
+      @include mq-inv-medium {
+        width: 7.5rem;
+        margin-bottom: 0.625rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @include mq-inv-medium {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  & .static-inner-header--buttons {
+    grid-area: alias-static-ih--buttons;
+    padding-right: 2.5625rem;
+    @include mq-inv-tablet {
+      padding-right: 1rem;
+    }
+    & .header-button {
+      @include mq-inv-tablet {
+        padding: 0 0.3125rem;
+      }
     }
   }
 
-  & .static-inner-header--communication-block {
-    grid-area: alias-static-ih--communication-block;
+  /* - Main Menu Communications Block */
+  & .inner-header--communication-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $textColor;
-    padding: 0 2.5rem;
 
     & .header-info-block-wrapper {
       display: inline-flex;
@@ -202,11 +241,61 @@
         & .header-info-link,
         & .header-info-text {
           font-size: 0.75rem;
-
           & i {
             margin-right: 0.125rem;
           }
         }
+      }
+    }
+    @include mq-inv-medium {
+      background-color: $mainBgColor;
+      justify-content: center;
+      & .header-info-block-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & .header-info-link,
+        & .header-info-text {
+          font-size: 0.875rem;
+          line-height: 1.875;
+          & i {
+            margin-right: 0.3125rem;
+          }
+        }
+      }
+    }
+  }
+
+  & .static-inner-header--communication-block {
+    grid-area: alias-static-ih--communication-block;
+    padding: 0 2.5rem;
+  }
+
+  /* - Mobile Body menu elements */
+  .inner-header--mobile-body {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 81px;
+    width: 100%;
+    background-color: $mainBgColor;
+    z-index: 10;
+    padding: 2.5rem 0;
+    @include mq-inv-medium {
+      &.open-mobile-menu {
+        display: flex;
+      }
+      & .inner-header--communication-block {
+        padding-bottom: 1.25rem;
+      }
+    }
+    & .inner-header--buttons {
+      padding-right: 0;
+      margin-bottom: 1.25rem;
+      & .header-buttons-block {
+        display: flex;
+        flex-direction: column;
       }
     }
   }
