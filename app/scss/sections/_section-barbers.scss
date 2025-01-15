@@ -1,0 +1,51 @@
+.section--barbers {
+  & .steelballs-gallery--barbers {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 1rem;
+    grid-column-gap: 0.25rem;
+    @include mq-inv-medium {
+      grid-template-columns: 1fr;
+    }
+    & .barber-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      & .barber-photo {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 25rem;
+        object-fit: cover;
+        object-position: top left;
+        @include mq-inv-large {
+          height: 18.125rem;
+        }
+        @include mq-inv-tablet {
+          height: 13.75rem;
+        }
+        @include mq-inv-medium {
+          height: 26.25rem;
+          max-width: 17.5rem;
+        }
+      }
+      & .barber-description {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: $textColor;
+        text-align: center;
+        height: 5rem;
+        overflow: hidden;
+        padding: 5px 0;
+        font-size: 1.125rem;
+          & .barber-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+      }
+    }
+  }
+}
