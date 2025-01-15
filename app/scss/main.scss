@@ -72,6 +72,10 @@ section {
   }
 }
 
+.light-weight-text {
+  font-weight: 300;
+}
+
 main {
   position: relative;
 }
@@ -90,6 +94,7 @@ main {
 @import 'sections/hero-section';
 @import 'sections/section-prices';
 @import 'sections/section-barbers';
+@import 'sections/section-works-gallery';
 //footer
 @import 'parts/footer';
 
