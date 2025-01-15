@@ -1,0 +1,27 @@
+.footer {
+  background-color: $mainBgColor;
+  color: $accentColor;
+  height: auto;
+  min-height: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include mq-inv-medium {
+    padding: 0.3125rem 0;
+  }
+
+  & .copyright-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mq-inv-medium {
+      flex-direction: column;
+    }
+    & .footer-copyright__separator {
+      @include mq-inv-medium {
+        display: none;
+      }
+    }
+  }
+}
