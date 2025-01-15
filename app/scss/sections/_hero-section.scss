@@ -1,0 +1,87 @@
+.section--hero {
+  background: url("../../img/cover_img.jpg") $mainBgColor;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 100vh;
+  padding-bottom: 2.5rem;
+  & .container {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  & .presentation-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    & .presentation-block--stars {
+      width: 10rem;
+      height: 3.125rem;
+      margin-bottom: 2.8125rem;
+    }
+    & .logo--hero-section {
+      display: inline-block;
+      width: clamp(16rem, 43.375rem, 43.375rem);
+      margin-bottom: 2.5rem;
+    }
+    & .company-type-word {
+      color: $accentColor;
+      position: relative;
+      display: inline-block;
+      font-family: 'Philosopher', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      &:before,
+      &:after {
+        content: "\2022";
+        color: $accentColor;
+        position: absolute;
+        top: 2px;
+      }
+      &:before {
+        left: -28px;
+      }
+      &:after {
+        right: -28px;
+      }
+    }
+    & .hero-section-btn {
+      display: block;
+      width: 13.25rem;
+      text-align: center;
+      background-color: transparent;
+      color: $accentColor;
+      outline: none;
+      border: 1px solid $accentColor;
+      height: 2.5rem;
+      font-size: 1.125rem;
+      line-height: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.5s;
+      &:hover {
+        color: $textColor;
+        background-color: $accentColor;
+      }
+    }
+  }
+  & .leave-section-block {
+    & .leave-section-block--btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 50%;
+      width: 2.625rem;
+      height: 2.625rem;
+      background-color: $accentColor;
+      & i {
+        font-size: 1.125rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

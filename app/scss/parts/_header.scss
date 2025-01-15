@@ -53,6 +53,16 @@
       & .static-inner-header--communication-block {
         display: none;
       }
+
+      & .main-menu {
+        & .menu-item {
+          &.active {
+            &:before {
+              top: 3px;
+            }
+          }
+        }
+      }
     }
     @include mq-inv-tablet {
       grid-template-columns: 12rem 1fr 10rem;
@@ -189,6 +199,23 @@
       padding: 0 0.3125rem;
     }
 
+    & .main-menu {
+      & .menu-item {
+        &.active {
+          &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 0.875rem;
+            height: 0.625rem;
+            background: url("../../img/decor-active-selector.svg") no-repeat;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
   }
 
   /* - Main Menu Buttons Block Part */
@@ -219,6 +246,10 @@
         color: $textColor;
         background-color: $accentColor;
         border: 1px solid $accentColor;
+        &:hover {
+          color: $secondAccentColor;
+          background-color: $linkColor;
+        }
       }
       @include mq-inv-medium {
         width: 7.5rem;
