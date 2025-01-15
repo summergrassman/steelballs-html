@@ -2,13 +2,14 @@
 
 body {
   color: $textColor;
-  background: url("../../img/barber_pattern.png") repeat repeat;
+  background: url("../../img/decor_barber_pattern.png") repeat repeat;
   font-size: 16px;
   line-height: 1.25;
   font-family: $mainFont;
   font-weight: normal;
   font-style: normal;
   height: 100vh;
+
   &.ovf_hidden {
     overflow: hidden;
   }
@@ -53,6 +54,9 @@ main {
 @import 'pages/page';
 
 @import 'parts/seach_form';
+
+//sections
+@import 'sections/hero-section';
 //footer
 @import 'parts/footer';
 
