@@ -1,0 +1,42 @@
+.section--contact {
+  & .contact-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.125rem;
+    & .contact-info--data-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.25rem;
+      color: $textColor;
+      & strong {
+        color: $textColor;
+      }
+      & .contact-data--label {
+        margin-right: 0.125rem;
+      }
+      & .contact-info--social-link {
+        text-transform: uppercase;
+        & i {
+          display: inline-block;
+          margin-right: 0.25rem;
+          color: $accentColor;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+  & .contact-map {
+    & img {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
