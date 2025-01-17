@@ -33,5 +33,5 @@ jQuery(function() {
         $(this).addClass('active').siblings().removeClass('active');
     }
 
-    operationalMenuItem.on("click", makeMenuItemActive);
+    operationalMenuItem.on("click", makeMenuItemActive);      
 });
