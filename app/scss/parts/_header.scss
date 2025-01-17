@@ -58,7 +58,7 @@
         & .menu-item {
           &.active {
             &:before {
-              top: 3px;
+              top: 50%;
             }
           }
         }
@@ -203,12 +203,15 @@
       & .menu-item {
         &.active {
           &:before {
+            top: 50%;
+          }
+          &:after {
             content: "";
             position: absolute;
             display: block;
             width: 0.875rem;
             height: 0.625rem;
-            background: url("../../img/decor-active-selector.svg") no-repeat;
+            background: url("../img/decor-active-selector.svg") no-repeat;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
