@@ -13,6 +13,9 @@
       align-items: center;
       margin-bottom: 0.25rem;
       color: $textColor;
+      @include mq-inv-small {
+        flex-direction: column;
+      }
       & strong {
         color: $textColor;
       }
@@ -21,6 +24,10 @@
       }
       & .contact-info--social-link {
         text-transform: uppercase;
+        margin-right: 1rem;
+        &:last-child {
+          margin-right: 0;
+        }
         & i {
           display: inline-block;
           margin-right: 0.25rem;

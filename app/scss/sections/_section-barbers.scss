@@ -13,6 +13,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      transition: all 1000ms ease;
+      &:hover {
+        transform: scale(1.1);
+        z-index: 2;
+      }
       & .barber-photo {
         display: block;
         width: 100%;

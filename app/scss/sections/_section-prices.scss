@@ -36,8 +36,25 @@
         width:100%;
         border-collapse: collapse;
         border: 1px solid $mainBgColor;
-        & tr:nth-child(even) td {
-          background-color: #f7f7f7;
+        & tr {
+          &:hover {
+            & td {
+              background-color: $accentColor;
+            }
+          }
+          & td {
+            transition: all .4s ease-in-out;
+          }
+        }
+        & tr:nth-child(even) {
+          &:hover {
+            td {
+              background-color: $accentColor;
+            }
+          }
+          td {
+            background-color: #f7f7f7;
+          }
         }
         & td {
           border: 1px solid $mainBgColor;
