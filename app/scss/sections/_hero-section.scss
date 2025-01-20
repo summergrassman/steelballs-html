@@ -1,3 +1,14 @@
+@keyframes slowAppearance {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .section--hero {
   background: url("../img/cover_img.jpg") $mainBgColor;
   background-repeat: no-repeat;
@@ -18,11 +29,13 @@
       width: 10rem;
       height: 3.125rem;
       margin-bottom: 2.8125rem;
+      animation: slowAppearance 1000ms linear;
     }
     & .logo--hero-section {
       display: inline-block;
       width: clamp(16rem, 43.375rem, 43.375rem);
       margin-bottom: 2.5rem;
+      animation: slowAppearance 1000ms linear;
     }
     & .company-type-word {
       color: $accentColor;
@@ -32,6 +45,7 @@
       font-size: 1.75rem;
       font-weight: 700;
       margin-bottom: 2.5rem;
+      animation: slowAppearance 1000ms linear;
       &:before,
       &:after {
         content: "\2022";
@@ -59,7 +73,8 @@
       line-height: 2.5rem;
       font-weight: bold;
       text-transform: uppercase;
-      transition: background-color 0.5s;
+      transition: all .4s ease-in-out;
+      animation: slowAppearance 1000ms linear;
       &:hover {
         color: $textColor;
         background-color: $accentColor;

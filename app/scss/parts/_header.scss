@@ -14,6 +14,7 @@
     height: 12.5rem;
     min-height: 3.75rem;
     max-height: 12.5rem;
+
     &.fixed-top-menu {
       width: 100%;
       position: fixed;
@@ -36,6 +37,7 @@
       @include mq-inv-medium {
         padding: 0;
       }
+
       & .static-inner-header--menus {
         &.static-inner-header--hide-on-mobile {
           display: flex;
@@ -44,12 +46,14 @@
           @include mq-inv-medium {
             display: none;
           }
+
           & .lang-menu {
             border-color: transparent;
             align-self: end;
           }
         }
       }
+
       & .static-inner-header--communication-block {
         display: none;
       }
@@ -64,6 +68,7 @@
         }
       }
     }
+
     @include mq-inv-tablet {
       grid-template-columns: 12rem 1fr 10rem;
     }
@@ -98,6 +103,7 @@
       padding: 0.5rem 0;
       border-bottom: 1px solid $accentColor;
     }
+
     & .nav-button-toggle {
       display: none;
       margin-right: 1rem;
@@ -107,9 +113,11 @@
       border-radius: 4px;
       color: $accentColor;
       transition: color 0.5s ease, background-color 0.5s ease;
+
       &:hover {
 
       }
+
       @include mq-inv-medium {
         display: inline-block;
       }
@@ -122,6 +130,7 @@
       @include mq-inv-tablet {
         padding-left: 1rem;
       }
+
       & img {
         width: 17.5rem;
         @include mq-inv-large {
@@ -180,6 +189,7 @@
     & .header-link {
       font-weight: 700;
       text-transform: uppercase;
+      transition: all .4s ease-in-out;
 
       &:hover {
         color: $accentColor;
@@ -205,6 +215,7 @@
           &:before {
             top: 50%;
           }
+
           &:after {
             content: "";
             position: absolute;
@@ -226,6 +237,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
+
     & .header-button {
       display: inline-block;
       padding: 0 0.625rem;
@@ -240,20 +252,24 @@
       background-color: transparent;
       border: 1px solid $accentColor;
       border-radius: 0;
-      transition: background-color 0.5s ease;
+      transition: all .4s ease-in-out;
+
       &:hover {
         color: $textColor;
         background-color: $accentColor;
       }
+
       &.header-button--emphasis {
         color: $textColor;
         background-color: $accentColor;
         border: 1px solid $accentColor;
+
         &:hover {
           color: $secondAccentColor;
           background-color: $linkColor;
         }
       }
+
       @include mq-inv-medium {
         width: 7.5rem;
         margin-bottom: 0.625rem;
@@ -262,18 +278,21 @@
         }
       }
     }
+
     @include mq-inv-medium {
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
   }
+
   & .static-inner-header--buttons {
     grid-area: alias-static-ih--buttons;
     padding-right: 2.5625rem;
     @include mq-inv-tablet {
       padding-right: 1rem;
     }
+
     & .header-button {
       @include mq-inv-tablet {
         padding: 0 0.3125rem;
@@ -315,6 +334,7 @@
         & .header-info-link,
         & .header-info-text {
           font-size: 0.75rem;
+
           & i {
             margin-right: 0.125rem;
           }
@@ -329,10 +349,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         & .header-info-link,
         & .header-info-text {
           font-size: 0.875rem;
           line-height: 1.875;
+
           & i {
             margin-right: 0.3125rem;
           }
@@ -364,9 +386,11 @@
         padding-bottom: 1.25rem;
       }
     }
+
     & .inner-header--buttons {
       padding-right: 0;
       margin-bottom: 1.25rem;
+
       & .header-buttons-block {
         display: flex;
         flex-direction: column;
