@@ -13,6 +13,11 @@ body {
   &.ovf_hidden {
     overflow: hidden;
   }
+  &.went-from-site-top-part {
+    & .section.panel {
+      padding-top: 18.75rem;
+    }
+  }
 }
 
 a {
